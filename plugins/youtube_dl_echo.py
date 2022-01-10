@@ -32,7 +32,7 @@ from helper_funcs.ran_text import random_char
 
 
 
-@Clinton.on_message(filters.private & filters.regex(pattern=".*http.*"))
+@Clinton.on_message(filters.private & filters.regex(pattern=".*zee5.*"))
 async def echo(bot, update):
     logger.info(update.from_user)
     url = update.text
