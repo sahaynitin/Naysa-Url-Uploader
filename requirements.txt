@@ -3,9 +3,7 @@ beautifulsoup4
 hachoir
 numpy
 Pillow
-pyrogram
 requests
-tgcrypto
 
 olefile
 filetype
@@ -13,4 +11,21 @@ tldextract
 motor
 aiofiles
 dnspython
+pyrogram==1.3.1
+tgcrypto==1.2.2
 yt-dlp==2021.12.27
+APScheduler==3.8.1
+beautifultable==1.0.1
+ffmpeg-python==0.2.0
+PyMySQL==1.0.2
+celery==5.2.3
+filetype==1.0.9
+flower==1.0.0
+psutil==5.9.0
+
+fakeredis
+supervisor
+tgbot-ping
+redis
+requests
+tqdm
