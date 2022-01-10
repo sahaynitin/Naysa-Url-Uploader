@@ -67,8 +67,7 @@ Made With 💕 By @Tellybots_4u
     ABS_TEXT = " Please don't be selfish."
     UPGRADE_TEXT = "<b>No preminum plans available in this bot </b>  /help for Details"
     FORMAT_SELECTION = "Now Select The Desired Format or File 🗄️ Size to Upload"
-    SET_CUSTOM_USERNAME_PASSWORD = """If you want to download premium videos, provide in the following format:
-URL | filename | username | password"""
+    SET_CUSTOM_USERNAME_PASSWORD = """"""
     NOYES_URL = "@robot URL detected. Please use https://shrtz.me/PtsVnf6 and get me a fast URL so that I can upload to Telegram, without me slowing down for other users."
     DOWNLOAD_FILE = " 📥DownloadinG📥 File "
     UPLOAD_FILE = " 📤UploadinG📤 \n\n To  transfer.sh "
