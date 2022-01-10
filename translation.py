@@ -9,7 +9,7 @@ I am Telegram Most Powerful Url Uploader Bot
 
 I can Upload Any Link in File or Video
 
-Use Help Command to Know How to Use me
+Use Help Button to Know How to Use me
 
 Made With 💕 By @Tellybots_4u
 """
