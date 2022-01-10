@@ -40,8 +40,8 @@ class Translation(object):
 """
     START_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('🤖 Update Channel', url='https://telegram.me/tellybots_4u'),
-        InlineKeyboardButton('💬 Support Group', url='https://telegram.me/tellybots_support')
+        InlineKeyboardButton('🤖 Channel', url='https://telegram.me/tellybots_4u'),
+        InlineKeyboardButton('💬 Support', url='https://telegram.me/tellybots_support')
         ],[
         InlineKeyboardButton('❔ Help', callback_data='help'),
         InlineKeyboardButton('⛔ Close', callback_data='close')
