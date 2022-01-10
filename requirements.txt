@@ -13,3 +13,4 @@ tldextract
 motor
 aiofiles
 dnspython
+yt-dlp
