@@ -162,16 +162,25 @@ async def youtube_dl_call_back(bot, update):
             chat_id=update.message.chat.id,
             message_id=update.message.message_id,
             text=error_message
-        )
+        )        
         return False
     if t_response:
-        # logger.info(t_response)
-        os.remove(save_ytdl_json_path)
+        logger.info(t_response)
+        try:
+            os.remove(save_ytdl_json_path)
+        except FileNotFoundError as exc:
+            pass
+        
         end_one = datetime.now()
         time_taken_for_download = (end_one -start).seconds
         file_size = Config.TG_MAX_FILE_SIZE + 1
         try:
             file_size = os.stat(download_directory).st_size
+        except FileNotFoundError as exc:
+            download_directory = os.path.splitext(download_directory)[0] + "." + "mkv"
+            # https://stackoverflow.com/a/678242/4723940
+            file_size = os.stat(download_directory).st_size
+
         except FileNotFoundError as exc:
             download_directory = os.path.splitext(download_directory)[0] + "." + "mkv"
             # https://stackoverflow.com/a/678242/4723940
