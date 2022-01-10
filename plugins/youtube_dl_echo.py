@@ -34,7 +34,6 @@ from helper_funcs.ran_text import random_char
 
 @Clinton.on_message(filters.private & filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
-
     logger.info(update.from_user)
     url = update.text
     youtube_dl_username = None
