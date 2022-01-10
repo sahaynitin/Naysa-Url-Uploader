@@ -6,11 +6,10 @@ Pillow
 pyrogram
 requests
 tgcrypto
-
+yt-dlp==2021.12.27
 olefile
 filetype
 tldextract
 motor
 aiofiles
 dnspython
-yt-dlp
