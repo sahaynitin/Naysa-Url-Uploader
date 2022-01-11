@@ -45,8 +45,6 @@ async def echo(bot, update):
         except Exception:
             await bot.edit_message_text(chat_id=update.chat.id, text=Translation.SOMETHING_WRONG, message_id=fmsg.message_id)
             return
-    if update.from_user.id not in Config.AUTH_USERS:
-        # restrict free users from sending more links
         if str(update.from_user.id) in Config.ADL_BOT_RQ:
             current_time = time.time()
             previous_time = Config.ADL_BOT_RQ[str(update.from_user.id)]
