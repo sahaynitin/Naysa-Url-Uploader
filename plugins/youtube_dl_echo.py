@@ -15,7 +15,7 @@ if bool(os.environ.get("WEBHOOK", False)):
 else:
     from config import Config
 # the Strings used for this "thing"
-
+import time
 from translation import Translation
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 from pyrogram import filters
@@ -29,7 +29,7 @@ from hachoir.parser import createParser
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant
 from helper_funcs.ran_text import random_char
-from plugins.timegap import check_time_gap
+
 
 @Clinton.on_message(filters.private & filters.regex(pattern=".*https.*"))
 async def echo(bot, update):
