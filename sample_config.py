@@ -25,7 +25,7 @@ class Config(object):
     # maximum message length in Telegram
     MAX_MESSAGE_LENGTH = 4096
     # set timeout for subprocess
-    PROCESS_MAX_TIMEOUT = 3600
+ 
     # watermark file
     DEF_WATER_MARK_FILE = ""
     # your telegram id
@@ -41,3 +41,11 @@ class Config(object):
     PRO_USERS.append(OWNER_ID)
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-100"))
     BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", "False"))
+    # maximum message length in Telegram
+    MAX_MESSAGE_LENGTH = 4096
+
+    # set timeout for subprocess
+    PROCESS_MAX_TIMEOUT = int(os.environ.get("TIME_LIMIT"))
+    
+    # dict to hold the ReQuest queue
+    ADL_BOT_RQ = {}
