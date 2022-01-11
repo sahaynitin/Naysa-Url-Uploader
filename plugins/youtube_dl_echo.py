@@ -45,11 +45,11 @@ async def echo(bot, update):
         except Exception:
             await bot.edit_message_text(chat_id=update.chat.id, text=Translation.SOMETHING_WRONG, message_id=fmsg.message_id)
             return
-    isInGap, sleepTime = await CheckTimeGap(m.from_user.id)
+    isInGap, sleepTime = await CheckTimeGap(update.from_user.id)
     if isInGap is True:
-        await m.reply_text(f"Sorry Bruh,\nNo Flooding Allowed!\nSend Url After `{str(sleepTime)}s` !!", quote=True)
+        await update.reply_text(f"Sorry Bruh,\nNo Flooding Allowed!\nSend Url After `{str(sleepTime)}s` !!", quote=True)
     else:
-        editable = await m.reply_text("Please Wait ...", quote=True)
+        editable = await update.reply_text("Please Wait ...", quote=True)
 
     await add_user_to_database(bot, update)
     logger.info(update.from_user)
