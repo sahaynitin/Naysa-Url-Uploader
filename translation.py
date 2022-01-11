@@ -91,7 +91,7 @@ Made With 💕 By @Tellybots_4u
     NO_VOID_FORMAT_FOUND = "Please Send a Valid Url"
     FILE_NOT_FOUND = "Error, File not Found!!"
     USER_ADDED_TO_DB = "User <a href='tg://user?id={}'>{}</a> added to {} till {}."
-
+    SOMETHING_WRONG = "<code>Something Wrong. Try again.</code>"
     REPLY_TO_DOC_GET_LINK = "Reply to a Telegram media to get High Speed Direct Download Link"
     REPLY_TO_DOC_FOR_C2V = "Reply to a Telegram media to convert"
     REPLY_TO_DOC_FOR_SCSS = "Reply to a Telegram media to get screenshots"
