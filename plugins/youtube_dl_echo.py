@@ -33,16 +33,7 @@ from plugins.timegap import check_time_gap
 
 @Clinton.on_message(filters.private & filters.regex(pattern=".*https.*"))
 async def echo(bot, update):
-    if not update.from_user:
-        return await update.reply_text("I don't know about you sar :(")
-    if update.from_user.id not in Config.PRO_USERS:
-        is_in_gap, sleep_time = await check_time_gap(update.from_user.id)
-        if is_in_gap:
-            await update.reply_text("Sorry Sir,\n"
-                               "No Flooding Allowed!\n\n"
-                               f"Send After `{str(sleep_time)}s` !!",
-                               quote=True)
-            return
+
     await add_user_to_database(bot, update)
     logger.info(update.from_user)
     url = update.text
