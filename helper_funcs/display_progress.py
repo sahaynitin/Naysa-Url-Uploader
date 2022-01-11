@@ -8,8 +8,7 @@ from typing import Union
 from pyrogram.types import Message, CallbackQuery
 from pyrogram.errors import FloodWait
 
-PROGRESS = 
-"""
+PROGRESS = """
 ╭─────────────────────〄
 │
 ├⏳ Percentage : `{0}%`
