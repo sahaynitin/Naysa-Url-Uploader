@@ -5,9 +5,9 @@ class Translation(object):
     START_TEXT = """
 Hey {}
 
-I am Telegram Most Powerful Zee5 Uploader Bot
+I am Telegram Most Powerful Url Uploader Bot
 
-I can Upload Zee5 Video To Telegram
+I can Upload Any Link in File or Video
 
 Use Help Button to Know How to Use me
 
