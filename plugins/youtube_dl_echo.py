@@ -20,7 +20,7 @@ from translation import Translation
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 from pyrogram import filters
 from pyrogram import Client as Clinton
-
+from database.add import add_user_to_database
 from helper_funcs.display_progress import humanbytes
 from helper_funcs.help_uploadbot import DownLoadFile
 from helper_funcs.display_progress import progress_for_pyrogram, humanbytes, TimeFormatter
@@ -29,7 +29,7 @@ from hachoir.parser import createParser
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant
 from helper_funcs.ran_text import random_char
-
+from plugins.timegap import check_time_gap
 
 @Clinton.on_message(filters.private & filters.regex(pattern=".*https.*"))
 async def echo(bot, update):
