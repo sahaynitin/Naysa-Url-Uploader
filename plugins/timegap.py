@@ -11,8 +11,8 @@ async def CheckTimeGap(user_id: int):
     if str(user_id) in GAP:
         current_time = time.time()
         previous_time = GAP[str(user_id)]
-        if round(current_time - previous_time) < Config.TIME_GAP:
-            return True, round(previous_time - current_time + Config.TIME_GAP)
+        if round(current_time - previous_time) < Config.PROCESS_MAX_TIMEOUT:
+            return True, round(previous_time - current_time + Config.PROCESS_MAX_TIMEOUT)
         elif round(current_time - previous_time) >= Config.TIME_GAP:
             del GAP[str(user_id)]
             return False, None
