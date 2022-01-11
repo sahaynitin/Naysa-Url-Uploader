@@ -15,7 +15,7 @@ if bool(os.environ.get("WEBHOOK", False)):
 else:
     from config import Config
 # the Strings used for this "thing"
-from database.adduser import AddUser
+
 from translation import Translation
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 from pyrogram import filters
