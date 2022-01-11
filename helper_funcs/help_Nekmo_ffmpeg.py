@@ -89,7 +89,7 @@ async def cult_small_video(video_file, output_directory, start_time, end_time, f
         return None
 
 
-async def generate_screen_shots(video_file, output_directory, no_of_photos, duration):
+async def take_screen_shot(video_file, output_directory, no_of_photos, duration):
     images = list()
     ttl_step = duration // no_of_photos
     current_ttl = ttl_step
