@@ -9,7 +9,7 @@ from pyrogram.types import (
 from sample_config import Config
 from pyrogram import Client
 from database.database import db
-from helper_func.display_progress import humanbytes
+from helper_funcs.display_progress import humanbytes
 from plugins.broadcast import broadcast_handler
 
 
