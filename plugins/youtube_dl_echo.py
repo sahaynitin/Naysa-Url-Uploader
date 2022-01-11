@@ -271,7 +271,7 @@ async def echo(bot, update):
                 )
             ])
         reply_markup = InlineKeyboardMarkup(inline_keyboard)
-        await chk.delete(True)
+      
         await bot.send_message(
             chat_id=update.chat.id,
             text=Translation.FORMAT_SELECTION + "\n" + Translation.SET_CUSTOM_USERNAME_PASSWORD,
