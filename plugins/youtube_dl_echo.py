@@ -189,13 +189,13 @@ async def echo(bot, update):
                 cb_string_file = "{}|{}|{}|{}".format(
                     "file", format_id, format_ext, randem)
                 if format_string is not None and not "audio only" in format_string:
-                    ikeyboard = [
+                ikeyboard = [
                         InlineKeyboardButton(
-                            "🎥 Video " + format_string + format_ext + " " + approx_file_size + " ",
+                            "🎥 Video " + format_string + " " + approx_file_size + " ",
                             callback_data=(cb_string_video).encode("UTF-8")
                         ),
                         InlineKeyboardButton(
-                            "🗃️ File " + " " + " ",
+                            "🗃️ File " + format_ext + " " + approx_file_size + " ",
                             callback_data=(cb_string_file).encode("UTF-8")
                         )
                     ]
@@ -213,13 +213,13 @@ async def echo(bot, update):
                     # special weird case :\
                     ikeyboard = [
                         InlineKeyboardButton(
-                            "SVideo [" +
+                            "🎥 Video [" +
                             "] ( " +
                             approx_file_size + " )",
                             callback_data=(cb_string_video).encode("UTF-8")
                         ),
                         InlineKeyboardButton(
-                            "DFile [" +
+                            "🗃️ File [" +
                             "] ( " +
                             approx_file_size + " )",
                             callback_data=(cb_string_file).encode("UTF-8")
