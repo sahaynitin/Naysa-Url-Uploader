@@ -49,7 +49,12 @@ async def echo(bot, update):
     if isInGap is True:
         await update.reply_text(f"Sorry Bruh,\nNo Flooding Allowed!\nSend Url After `{str(sleepTime)}s` !!", quote=True)
     else:
-        editable = await update.reply_text("Please Wait ...", quote=True)
+        chk = await bot.send_message(
+            chat_id=update.chat.id,
+            text=f'Processing Your Link ⌛',
+            disable_web_page_preview=True,
+            reply_to_message_id=update.message_id
+          )
 
     await add_user_to_database(bot, update)
     logger.info(update.from_user)
