@@ -26,7 +26,7 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 from pyrogram import filters
-
+from database.database import db
 from helper_funcs.help_Nekmo_ffmpeg import take_screen_shot
 
 @Clinton.on_message(filters.private & filters.photo)
