@@ -9,7 +9,7 @@ from pyrogram.types import Message, CallbackQuery
 from pyrogram.errors import FloodWait
 
 PROGRESS = """
-╭─────────────────────〄
+╭──────[ ᴜᴘʟᴏᴀᴅɪɴɢ ]──────〄
 │
 ├⏳ Percentage : `{0}%`
 │
@@ -21,7 +21,7 @@ PROGRESS = """
 │
 ├⏱️ Eta : `{4}`
 │
-╰─────────────────────〄
+╰─[]
 """
 
 
