@@ -20,16 +20,18 @@ PROGRESS = """
 
 ⏱️ **ETA:** `{4}`
 """
+
 async def progress_for_pyrogram(
     current,
     total,
     ud_type,
-    message: Union[Message, CallbackQuery],
+    message,
     start
 ):
     now = time.time()
     diff = now - start
     if round(diff % 10.00) == 0 or current == total:
+        # if round(current / total * 100, 0) % 5 == 0:
         percentage = current * 100 / total
         speed = current / diff
         elapsed_time = round(diff) * 1000
@@ -39,42 +41,27 @@ async def progress_for_pyrogram(
         elapsed_time = TimeFormatter(milliseconds=elapsed_time)
         estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
 
-        progress = "[{0}{1}] \n".format(
-            ''.join(["●" for _ in range(math.floor(percentage / 5))]),
-            ''.join(["○" for _ in range(20 - math.floor(percentage / 5))])
-            )
+        progress = "[{0}{1}] \n<b>• Percentage :</b> {2}%\n".format(
+            ''.join(["▣" for i in range(math.floor(percentage / 10))]),
+            ''.join(["□" for i in range(10 - math.floor(percentage / 10))]),
+            round(percentage, 2))
 
-        tmp = progress + PROGRESS.format(
-            round(percentage, 2),
+        tmp = progress + "<b>• Completed :</b> {0}\n<b>• Size :</b> {1}\n<b>• Speed :</b> {2}/s\n<b>• ETA :</b> {3}\n".format(
             humanbytes(current),
             humanbytes(total),
             humanbytes(speed),
+            # elapsed_time if elapsed_time != '' else "0 s",
             estimated_total_time if estimated_total_time != '' else "0 s"
         )
         try:
-            try:
-                _ = message.message_id
-                await message.edit(
-                    text="**{}**\n\n {}".format(
-                        ud_type,
-                        tmp
-                    ),
-                    parse_mode='markdown'
+            await message.edit(
+                text="{}\n{}".format(
+                    ud_type,
+                    tmp
                 )
-            except AttributeError:
-                await bot.bot.edit_inline_caption(
-                    inline_message_id=message.inline_message_id,
-                    caption="**{}**\n\n {}".format(
-                        ud_type,
-                        tmp
-                    ),
-                    parse_mode='markdown'
-                )
-        except FloodWait as e:
-            await asyncio.sleep(e.x)
-        except Exception:
+            )
+        except:
             pass
-
 
 def humanbytes(size):
     # https://stackoverflow.com/a/49361727/4723940
